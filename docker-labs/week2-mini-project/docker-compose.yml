@@ -1,0 +1,14 @@
+services:
+  app:
+    build: ./app
+    container_name: mini-node-app
+
+  nginx:
+    image: nginx
+    container_name: mini-nginx
+    ports:
+      - "8085:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app

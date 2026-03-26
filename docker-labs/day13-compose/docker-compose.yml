@@ -1,0 +1,14 @@
+services:
+  web:
+      image: nginx
+      container_name: web-nginx
+      ports: 
+           - "8020:80"
+  redis:
+      image: redis
+      container_name: redis-db
+  app:
+      image: docker-node-app
+      ports:
+          - "3001:3000"
+ 
